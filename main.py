@@ -7,7 +7,7 @@ st.set_page_config(page_title='Snowflake', layout='wide',
                 #    initial_sidebar_state=st.session_state.get('sidebar_state', 'collapsed'),
 )
 
-st.image("./logo/CodeBuddy.jpg", use_column_width=True)
+st.image("./logo/CodeBuddy_v3.jpg", use_column_width=True)
 
 st.snow()
 
@@ -69,7 +69,7 @@ else:
 
 
 ########################
-# Remvoed this section #
+# Removed this section #
 ########################
 _, exp_col, _ = st.columns([1,3,1])
 with exp_col:
