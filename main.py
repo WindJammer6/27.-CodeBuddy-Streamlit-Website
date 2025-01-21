@@ -56,7 +56,7 @@ database_data_assignments = reference_to_database_assignments.get()
 
 # Check if the Firebase Realtime database is None or empty
 if database_data_assignments is None:
-    st.write("No data found in the Firebase Realtime Database.")
+    print("No data in the Firebase Realtime Database.")
 else:
     # Converting the Firebase Realtime Database to a list of dictionaries
     if isinstance(database_data_assignments, dict):
@@ -73,14 +73,14 @@ else:
 ########################
 _, exp_col, _ = st.columns([1,3,1])
 with exp_col:
-    with st.expander("**📖 How to use this Streamlit Website for CodeBuddy Bot**"):
+    with st.expander("**📖 How to use this Streamlit Website for CodeBuddy**"):
         st.markdown("""                    
-                    **What can I do here??** 🤔
+                    **What can I do here?** 🤔
 
-                    You, the course instructor, can upload school assignments and the corresponding notes to CodeBuddy Bot here so it is up-to-date with the
-                    latest available tasks and information.
+                    You, the course instructor, can upload school assignments and the corresponding notes to CodeBuddy here so it is up-to-date with the
+                    latest available assignments and information.
 
-                    It also serves as a place for course instructors like you to do learning review and keep track of your students' learning by searching for a particular student or assignment! 🔥🔥
+                    It also serves as a place for you to do learning review and keep track of your students' learning by searching for a particular student or assignment! 🔥🔥
                     """)
 
 
@@ -95,8 +95,8 @@ cols = st.columns(2)
 def student_chatbot_conversation(index):
     st.header(f"👨‍🎓 Student ID: {database_data_conversations[index]['student_id']}")
     st.caption(f"{database_data_conversations[index]['assignment']} | {database_data_conversations[index]['date_and_time_of_submission']}")
-    student_code_tab, chatbot_response_tab, autograding_score_tab, assignment_question_tab, assignment_notes_tab = \
-        st.tabs(["Student's Code", "Codebuddy's Response", "Score", "Question", "Notes"])
+    student_code_tab, chatbot_response_tab, autograding_score_tab, assignment_question_notes_tab = \
+        st.tabs(["Student's Code", "Codebuddy's Response", "Score", "Question Notes"])
     
     with student_code_tab:
         st.code(database_data_conversations[index]['code_submitted'], language="python")
@@ -105,13 +105,10 @@ def student_chatbot_conversation(index):
         st.code(database_data_conversations[index]['telegram_chatbot_chatbase_response'], language="text")
 
     with autograding_score_tab:
-        st.markdown("""🎯 Autograded score:  
-                    **6/10**""")
+        st.markdown(f"""🎯 Autograded score:  
+                    {database_data_conversations[index]['scores']}""")
 
-    with assignment_question_tab:
-        st.markdown(f"*{database_data_conversations[index]['assignment']}*")
-
-    with assignment_notes_tab:
+    with assignment_question_notes_tab:
         st.markdown(f"📖 Lecture notes for the *{database_data_conversations[index]['assignment']}* assignment:")
 
 
@@ -121,8 +118,8 @@ def student_chatbot_conversation(index):
 #################
 # Sidebar codes #
 #################
-st.sidebar.title("📚 CodeBuddy Bot for *Beginner Programming Courses* 💻")
-st.sidebar.write("**Your Personal Coding Assistant to kickstart your programming journey!**")
+st.sidebar.title("**CodeBuddy** 📚💻")
+st.sidebar.caption("**Your school's personalised coding assistant for your programming queries!**")
 st.sidebar.caption("Made by [WindJammer6](https://github.com/WindJammer6)")
 st.sidebar.caption("Made possible with:")
 
@@ -160,7 +157,7 @@ if st.sidebar.button("Search", key=1):
 
     # Check if the Firebase Realtime database is None or empty
     if database_data_conversations is None:
-        st.write("No data found in the Firebase Realtime Database.")
+        st.info("No specified data found in the Firebase Realtime Database.")
     else:
         # Converting the Firebase Realtime Database to a list of dictionaries
         if isinstance(database_data_conversations, dict):
@@ -199,7 +196,7 @@ if st.sidebar.button(f"Search", key=2):
 
     # Check if the Firebase Realtime database is None or empty
     if database_data_conversations is None:
-        st.write("No data found in the Firebase Realtime Database.")
+        st.info("No specified data found in the Firebase Realtime Database.")
     else:
         # Converting the Firebase Realtime Database to a list of dictionaries
         if isinstance(database_data_conversations, dict):
@@ -229,7 +226,7 @@ if st.sidebar.button(f"Search", key=2):
 add_remove_assignments = st.sidebar.expander("📝 Manage Assignments")
 with add_remove_assignments:
     st.title("Available Assignments:")
-    st.caption("These assignments will be publicly available to the students in the CodeBuddy Bot 🤖.")
+    st.caption("These assignments will be publicly available to the students in the CodeBuddy 🤖.")
     side_left_col, side_right_col = st.columns(2)
 
     if database_data_assignments is not None:
@@ -251,7 +248,7 @@ with add_remove_assignments:
 
                     # Check if the Firebase Realtime database is None or empty
                     if database_data_conversations is None:
-                        st.write("No data found in the Firebase Realtime Database.")
+                        st.info("No specified data found in the Firebase Realtime Database.")
                     else:
                         # Converting the Firebase Realtime Database to a list of dictionaries
                         if isinstance(database_data_conversations, dict):
@@ -276,7 +273,7 @@ with add_remove_assignments:
 
                     # Check if the Firebase Realtime database is None or empty
                     if database_data_conversations is None:
-                        st.write("No data found in the Firebase Realtime Database.")
+                        st.info("No specified data found in the Firebase Realtime Database.")
                     else:
                         # Converting the Firebase Realtime Database to a list of dictionaries
                         if isinstance(database_data_conversations, dict):
@@ -297,13 +294,52 @@ with add_remove_assignments:
             unsafe_allow_html=True
         )
         st.caption("Just click the 'Add Assignment' button once! Then click the 'Refresh' button for the added assignment to show up!")
-        assignment_name = st.text_input("Name of assignment:")
-        assignment_link = st.text_area("Assignment notes:")
+        assignment_name = st.text_input("Name of Assignment:")
+        assignment_notes = st.text_area("Assignment Notes:")
 
-        if st.button("Add"):
+        # Initialize session state for managing test cases
+        if "test_cases" not in st.session_state:
+            st.session_state.test_cases = []  # List to store input-output pairs
+
+        def add_test_case(input_value, output_value):
+            """Appends a new test case to the session state."""
+            st.session_state.test_cases.append({"input": input_value, "expected_output": output_value})
+
+        def save_test_cases():
+            """Saves test cases to a variable for future use."""
+            st.session_state.saved_test_cases = st.session_state.test_cases.copy()
+
+        # Input and Output text boxes
+        st.subheader("Test Cases List:")
+        input_value = st.text_input("Input", placeholder="Enter test input here")
+        output_value = st.text_input("Output", placeholder="Enter expected output here")
+
+        # Add button to save the current pair to the list
+        if st.button("Add Test Case"):
+            if input_value.strip() and output_value.strip():
+                add_test_case(input_value, output_value)
+                st.success("Test case added!")
+            else:
+                st.error("Both Input and Output fields must be filled.")
+
+        if st.button("Reset Test Cases"):
+            st.session_state.test_cases = []
+
+        # Display the current list of test cases
+        if st.session_state.test_cases:
+            for i, case in enumerate(st.session_state.test_cases, start=1):
+                st.write(f"**{i}.** Input: `{case['input']}` | Expected Output: `{case['expected_output']}`")
+        else:
+            st.info("No test cases added yet.")
+        
+        st.write("")
+        if st.button("Add Assignment"):
+            save_test_cases()
+
             #If confirmation add assignment button is pressed in the Streamlit (Python) web application, the program will 'push' 
             #basically add this new pieces of user data into the Realtime database in Firebase  
-            reference_to_database_assignments.push({"assignment_name" : assignment_name, "assignment_link" : assignment_link})    
+            reference_to_database_assignments.push({"assignment_name" : assignment_name, "assignment_notes" : assignment_notes, 'test_cases' : (st.session_state.saved_test_cases)})    
+            st.success("Assignment added!")
     
     with st.popover("➖Remove Assignment"):
         st.caption("Just click the 'Remove Assignment' button once! Then click the 'Refresh' button for the assignment to be removed!")
@@ -320,8 +356,11 @@ with add_remove_assignments:
         )
 
         options_list = []
-        for key, value in reference_to_database_assignments.get().items():
-            options_list.append(value['assignment_name'])
+        if reference_to_database_assignments.get() is not None:
+            for key, value in reference_to_database_assignments.get().items():
+                options_list.append(value['assignment_name'])
+        else:
+            options_list = '--No assignments available--'
 
         select_box_option = st.selectbox("➖Remove Assignment:", options_list)
     
@@ -338,8 +377,8 @@ with add_remove_assignments:
     st.button("Refresh")
 
 st.sidebar.success("""
-                   **What is CodeBuddy Bot?**  
-                   CodeBuddy Bot is a Telegram Chatbot that allows novice programmers to get instant feedback for errors/quality of their code 
+                   **What is CodeBuddy?**  
+                   CodeBuddy is a Telegram Chatbot that allows novice programmers to get instant feedback for errors/quality of their code 
                    for their school assignments based on the given school notes before submission to their respective school assignment submission 
                    portals. In addition, it allows course instructors/teachers to upload their assignments and notes for each assignment, as well as 
                    review conversations between the students and the Telegram Chatbot (as teaching review to what troubles the students are facing) 
@@ -349,10 +388,10 @@ st.sidebar.success("""
 
 st.sidebar.info("""
                 **What is this Streamlit website for?**  
-                This online Streamlit website is for course instructors to control the settings of CodeBuddy Bot, including:  
+                This online Streamlit website is for course instructors to control the settings of CodeBuddy, including:  
                 1. Add and Remove Course Assignments
                 2. Upload Corresponding Notes for the Assignments
-                3. Review Code Submitted by Students as well as the Corresponding Responses from CodeBuddy Bot
+                3. Review Code Submitted by Students as well as the Corresponding Responses from CodeBuddy
 """
 )
 
