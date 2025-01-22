@@ -109,7 +109,13 @@ def student_chatbot_conversation(index):
                     {database_data_conversations[index]['scores']}""")
 
     with assignment_question_notes_tab:
-        st.markdown(f"📖 Lecture notes for the *{database_data_conversations[index]['assignment']}* assignment:")
+        # To extract the assignment link for the extracted assignment name in the 'list_of_assignments' list
+        extracted_assignment_notes = None
+
+        for assignment in database_data_assignments:
+            if assignment['assignment_name'] == database_data_conversations[index]['assignment']:
+                extracted_assignment_notes = assignment['assignment_notes']
+        st.markdown(f"📖 Notes for the *{database_data_conversations[index]['assignment']}* assignment:\n\n{extracted_assignment_notes}")
 
 
 # /////////////////////////////////////////////////////////////////////////////////////////

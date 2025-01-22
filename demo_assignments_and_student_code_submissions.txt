@@ -53,13 +53,13 @@ Assignment 2: "Check Prime Number"
 1. Student ID: `12345`  
    Code:
    ```python
-   def is_prime(n):
-       if n <= 1:
-           return False
-       for i in range(2, int(n0.5) + 1):
-           if n % i == 0:
-               return False
-       return True
+    def is_prime(n):
+        if n <= 1:
+            return False
+        for i in range(2, int(n0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
    ```
    Outcome: Passes all test cases.
 
@@ -123,5 +123,3 @@ Assignment 3: "Sum of Digits"
 - `12345`: Submits for Assignment 1 and Assignment 2.
 - `67890`: Submits for Assignment 1 and Assignment 3.
 - `54321`: Submits for Assignment 2 and Assignment 3.
-
-This dataset should provide enough variability for testing purposes. Let me know if you need more!
