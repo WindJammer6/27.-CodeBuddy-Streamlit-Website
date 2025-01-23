@@ -20,7 +20,7 @@ st.snow()
 #####################################################################################
 
 # Setting up the Firebase database for the conversations:
-fb_credentials = st.secrets["firebase"]['FIREBASE_DB_CONVERSATIONS']
+fb_credentials = st.secrets['FIREBASE_DB_CONVERSATIONS']
 
 if "conversations" not in firebase_admin._apps:
     # Initialize Firebase
@@ -35,7 +35,7 @@ reference_to_database_conversations = db.reference('/', app=firebase_admin.get_a
 
 
 # Setting up the Firebase database for the assignments:  
-fb_credentials2 = st.secrets["firebase"]['FIREBASE_DB_ASSIGNMENTS']
+fb_credentials2 = st.secrets['FIREBASE_DB_ASSIGNMENTS']
 
 if "conversations" not in firebase_admin._apps:
     # Initialize Firebase
