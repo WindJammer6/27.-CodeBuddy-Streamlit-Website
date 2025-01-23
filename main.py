@@ -1,7 +1,7 @@
 import streamlit as st
 from firebase_admin import db
 import firebase_admin
-
+import json
 
 st.set_page_config(page_title='CodeBuddy', layout='wide',
                 #    initial_sidebar_state=st.session_state.get('sidebar_state', 'collapsed'),
@@ -20,7 +20,8 @@ st.snow()
 #####################################################################################
 
 # Setting up the Firebase database for the conversations:
-fb_credentials = st.secrets['FIREBASE_DB_CONVERSATIONS']
+fb_credentials = json.loads(st.secrets['FIREBASE_DB_CONVERSATIONS'])
+
 
 if "conversations" not in firebase_admin._apps:
     # Initialize Firebase
@@ -35,7 +36,7 @@ reference_to_database_conversations = db.reference('/', app=firebase_admin.get_a
 
 
 # Setting up the Firebase database for the assignments:  
-fb_credentials2 = st.secrets['FIREBASE_DB_ASSIGNMENTS']
+fb_credentials2 = json.loads(st.secrets['FIREBASE_DB_ASSIGNMENTS'])
 
 if "conversations" not in firebase_admin._apps:
     # Initialize Firebase
