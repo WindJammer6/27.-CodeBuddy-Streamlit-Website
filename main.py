@@ -38,7 +38,7 @@ reference_to_database_conversations = db.reference('/', app=firebase_admin.get_a
 # Setting up the Firebase database for the assignments:  
 fb_credentials2 = json.loads(st.secrets['FIREBASE_DB_ASSIGNMENTS'])
 
-if "conversations" not in firebase_admin._apps:
+if "assignments" not in firebase_admin._apps:
     # Initialize Firebase
     credentials_object_conversations = firebase_admin.credentials.Certificate(fb_credentials2)
     firebase_admin.initialize_app(credentials_object_assignments, {
