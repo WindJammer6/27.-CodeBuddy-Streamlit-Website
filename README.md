@@ -37,6 +37,12 @@ and for code submitted that is wrapped in a function
 
 
 Say this is the first time enabling the secret key? Or add this first time section to the 18. karoke event repo? (Might need redo the firebase key for that one also since that streamlit website also uses firebase integration)
+
+Soure(s):  
+- https://docs.streamlit.io/develop/api-reference/connections/st.secrets
+- https://firebase.google.com/docs/reference/admin/python/firebase_admin.credentials
+- and chatgpt too for teaching
+
 From ChatGPT:
 Me: How to jide api keys in github? I rmb you mentioned something like using environment varibales and the os library
 ChatGPT said: To hide API keys in a GitHub project, you can use environment variables and the Python os library. Here's how:
