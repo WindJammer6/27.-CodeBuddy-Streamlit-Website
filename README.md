@@ -39,8 +39,9 @@ and for code submitted that is wrapped in a function
 Say this is the first time enabling the secret key? Or add this first time section to the 18. karoke event repo? (Might need redo the firebase key for that one also since that streamlit website also uses firebase integration)
 
 Soure(s):  
-- https://docs.streamlit.io/develop/api-reference/connections/st.secrets
-- https://firebase.google.com/docs/reference/admin/python/firebase_admin.credentials
+- https://blog.streamlit.io/secrets-in-sharing-apps/ (to see where the 'secrets' setting is on the streamlit cloud deployment platform)
+- https://docs.streamlit.io/develop/api-reference/connections/st.secrets (to see how to translate the 'secrets' in code)
+- https://firebase.google.com/docs/reference/admin/python/firebase_admin.credentials (what datatype of the input, aka 'cert' in the firebase function credentials.Certificate(cert) is)
 - and chatgpt too for teaching
 
 From ChatGPT:
