@@ -15,4 +15,22 @@ FIREBASE_DB_CONVERSATIONS = '{"type": "service_account","project_id": "urop-tele
 FIREBASE_DB_ASSIGNMENTS = '{"type": "service_account","project_id": "urop-chatbot-assignments","private_key_id": "teehee","private_key": "teehee","client_email": "teehee","client_id": "teehee","auth_uri": "teehee","token_uri": "teehee","auth_provider_x509_cert_url": "teehee","client_x509_cert_url": "teehee","universe_domain": "teehee"}'
 ```
 
-The Telegram chatbot autograder only works for Python, and for code submitted that is wrapped in a function
+Initially firebase's api gave it like this, so you need remove all the \n (next lines) and make it into a straight line in order for this to work:
+```text
+{
+  "type": "service_account",
+  "project_id": "urop-telegram-chatbot",
+  "private_key_id": "teehee",
+  "private_key": "teehee",
+  "client_email": "teehee",
+  "client_id": "teehee",
+  "auth_uri": "teehee",
+  "token_uri": "teehee",
+  "auth_provider_x509_cert_url": "teehee",
+  "client_x509_cert_url": "teehee",
+  "universe_domain": "teehee"
+}
+```
+
+The Telegram chatbot autograder only works for Python,
+and for code submitted that is wrapped in a function
