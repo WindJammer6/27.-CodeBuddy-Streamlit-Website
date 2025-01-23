@@ -34,3 +34,6 @@ Initially firebase's api gave it like this, so you need remove all the \n (next 
 
 The Telegram chatbot autograder only works for Python,
 and for code submitted that is wrapped in a function
+
+
+Say this is the first time enabling the secret key? Or add this first time section to the 18. karoke event repo? (Might need redo the firebase key for that one also since that streamlit website also uses firebase integration)
