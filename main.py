@@ -1,6 +1,7 @@
 import streamlit as st
 from firebase_admin import db
 import firebase_admin
+import json
 
 
 st.set_page_config(page_title='Snowflake', layout='wide',
@@ -20,9 +21,14 @@ st.snow()
 #####################################################################################
 
 # Setting up the Firebase database for the conversations:
+
+# Getting the secret Firebase Realtime Database API key from the environment variables/'secrets' app setting on the Streamlit Cloud deployment platform
+firebase_key_conversations = st.secrets['FIREBASE_DB_CONVERSATIONS']
+firebase_key_conversations_json = json.loads(firebase_key_conversations)
+
 if "conversations" not in firebase_admin._apps:
     # Initialize Firebase
-    credentials_object_conversations = firebase_admin.credentials.Certificate("firebase_key_conversations.json")
+    credentials_object_conversations = firebase_admin.credentials.Certificate(firebase_key_conversations_json)
     firebase_admin.initialize_app(credentials_object_conversations, {
         'databaseURL': 'https://urop-telegram-chatbot-default-rtdb.asia-southeast1.firebasedatabase.app/'
     }, name='conversations')
@@ -32,10 +38,15 @@ reference_to_database_conversations = db.reference('/', app=firebase_admin.get_a
 
 
 
-# Setting up the Firebase database for the assignments:   
-if "assignments" not in firebase_admin._apps:
+# Setting up the Firebase database for the assignments:  
+
+# Getting the secret Firebase Realtime Database API key from the environment variables/'secrets' app setting on the Streamlit Cloud deployment platform
+firebase_key_assignments = st.secrets['FIREBASE_DB_ASSIGNMENTS']
+firebase_key_assignments_json = json.loads(firebase_key_assignments)
+
+if "conversations" not in firebase_admin._apps:
     # Initialize Firebase
-    credentials_object_assignments = firebase_admin.credentials.Certificate("firebase_key_assignments.json")
+    credentials_object_conversations = firebase_admin.credentials.Certificate(firebase_key_assignments_json)
     firebase_admin.initialize_app(credentials_object_assignments, {
         'databaseURL': 'https://urop-chatbot-assignments-default-rtdb.asia-southeast1.firebasedatabase.app/'
     }, name='assignments')
