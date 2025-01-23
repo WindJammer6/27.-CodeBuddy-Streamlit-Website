@@ -7,7 +7,7 @@ st.set_page_config(page_title='CodeBuddy', layout='wide',
                 #    initial_sidebar_state=st.session_state.get('sidebar_state', 'collapsed'),
 )
 
-st.image("./logo/CodeBuddy_v3.jpg", use_column_width=True)
+st.image("./logo/CodeBuddy_v3.jpg", use_container_width=True)
 
 st.snow()
 
