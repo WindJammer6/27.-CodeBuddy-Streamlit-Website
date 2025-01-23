@@ -40,7 +40,7 @@ fb_credentials2 = json.loads(st.secrets['FIREBASE_DB_ASSIGNMENTS'])
 
 if "assignments" not in firebase_admin._apps:
     # Initialize Firebase
-    credentials_object_conversations = firebase_admin.credentials.Certificate(fb_credentials2)
+    credentials_object_assignments = firebase_admin.credentials.Certificate(fb_credentials2)
     firebase_admin.initialize_app(credentials_object_assignments, {
         'databaseURL': 'https://urop-chatbot-assignments-default-rtdb.asia-southeast1.firebasedatabase.app/'
     }, name='assignments')
