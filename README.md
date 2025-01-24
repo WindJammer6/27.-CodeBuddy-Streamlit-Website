@@ -1,15 +1,15 @@
-# 27.-CodeBuddy-Bot-Streamlit-Website
+# 27.-CodeBuddy-Streamlit-Website
 <p align="center"> 
   <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/Image%20of%20TaniBoss!.png"  width="550" height="250">
   <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/SUTD%20FACT%20Trip%20at%20PCU%20Hackathon%20Certificate%20of%20Top%20Winning%20Team.jpg"  width="350" height="250">
   <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/SUTD%20FACT%20Trip%20at%20PCU%20Hackathon%20Certificate%20of%20Participation.jpg"  width="350" height="250">
 </p>
 
-Took part in a 7-day general programming [SUTD Freshmore Asian Cross-curricular Trip (FACT)](https://www.sutd.edu.sg/campus-life/global-experience-and-exchange/sutd-fact/) to [Petra Christian University (PCU)](https://en.wikipedia.org/wiki/Petra_Christian_University) in Surabaya, Indonesia as part of the [10.020 Data Driven World module](https://www.sutd.edu.sg/course/10-020-data-driven-world-elective). Took part in the hackathon during the trip in a team of 6 (3 SUTD students and 3 PCU students) and achieved 1st Place (out of 10 teams).
+This is my submission for the [Devpost](https://devpost.com/) hackathon titled: '[RAG 'n' ROLL Amp up Search with Snowflake & Mistral](https://snowflake-mistral-rag.devpost.com/)' lasting from 13-Nov-2024 to 21-Jan-2025.
 
-From the [SUTD FACT Trips official website](https://www.sutd.edu.sg/campus-life/global-experience-and-exchange/sutd-fact/): 'FACT (Freshmore Asian Cross-curricular Trips) is a 1-week overseas immersion programme which enables Freshmore (first-year) students to build upon their acquired knowledge at our partner universities in Asia. Centered around specific Freshmore courses, FACT challenges students to apply what they’ve learned in the classroom to solving sustainability challenges within the region.'
+From the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral official website](https://snowflake-mistral-rag.devpost.com/): 'This hackathon is an opportunity to riff with cutting-edge AI technology. Join us and get comfortable with a setlist for learning AI with Cortex Search for retrieval, Mistral LLM (mistral-large2) on Snowflake Cortex for generation, and Streamlit Community Cloud for the front end.'
 
-The challenge of this hackathon was to create a website application using Streamlit and machine learning to help local businesses (we visited a cafe, paving factory and farm) in Gunung Anyar, Surabaya, Indonesia.
+The challenge of this hackathon was to create an innovative Retrieval-Augmented Generation (RAG) applications that can revolutionize how we interact with information using [Snowflake's Cortex Search](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview) for retrieval, [Mistral LLM (mistral-large2)](https://mistral.ai/news/mistral-large-2407/) on [Snowflake's Cortex Search](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview) for generation and [Streamlit Community Cloud](https://streamlit.io/cloud) for front end.
 
 Created a functional prototype Streamlit website application to help out a local farm business (particularly about finding the optimal conditions for hydroponic farming of spinaches), titled '**TaniBoss!**' ('Tani' comes from 'Petani', which is Indonesian for 'Farmer'). It contains the features:
 - A simple prediction and farming conditions recommendation machine learning model to optimise crop yield (using the Multiple Variable Linear Regression (MVLR) machine learning algorithm)
@@ -38,12 +38,7 @@ Contributed to the problem statement formulation, design of the machine learning
 <br>
 
 **Potential Improvements:**  
-(TaniBoss! is only a functional prototype and a proof of concept, hence some of the features is only shown as UI and doesnt actually work)  
-- Currently the forum feature in TaniBoss! is not connected to any database, hence questions and answers posted on the forum will not be saved and will all be deleted whenever TaniBoss! is rerun.
-- PetaniAI was created and trained using the Chatbase custom GPT LLM model API, which requires a paid subscription to maintain. However, I have stopped subscription and hence PetaniAI no longer works and will not be able to generate responses from prompts anymore.
-- Data used to train the PetaniAI is also not the best, as I just randomly googled some websites on hydroponic and general farming for various crops and fed those website links to the LLM model 
-- Since the prediction and farming conditions recommendation machine learning model is trained from a static database (the [Crop yield dataset CSV file](https://github.com/WindJammer6/28.-TaniBoss/blob/main/Crop%20yield%20dataset.csv)), rather than a realtime database, it does not actually take in new data input from the local farmers and retrain itself to update its parameters... (the inputs to 'Train the Model' in the 'Predictor' page in TaniBoss! does not actually do anything and is just shown as UI)
-- Inputs in the text boxes of the prediction and farming conditions recommendation machine learning model does not accept letters, only integers. It will throw an error if there is any non-integer inputs in any of the text boxes (was too lazy to solve the error due to time constraints)
+- Presently the autograder only works for Python code. Can potentially expand it to work for other programming languages.
 
 <br>
 
@@ -54,6 +49,12 @@ nil
 
 *This project's deployed Streamlit (Python Framework)'s Web Application link:*
 + https://28-taniboss-a4pztr2hja6xtix2m44wef.streamlit.app/ 
+
+This project is made up of 2 Github repositories:  
+- [21.-Deployed-Telegram-Chatbot-integrated-with-Chatbase-custom-GPT-LLM-model-API-and-Firebase](https://github.com/WindJammer6/21.-Deployed-Telegram-Chatbot-with-Chatbase-custom-GPT-LLM-model-API-and-Firebase-in-Vercel) (this Github repository) (hosts the code for the Telegram Chatbot integrated with Chatbase custom GPT LLM model API and Firebase (API)'s Realtime Database) (this repo is the main submission github repo for the hackathon, hence i tsferred the telegram bot code here too, though its not the repo hosting the bot. Since the hackathon focuses on the streamlit aspect so submit this repo instead of the other repo)
+- [22.-Deployed-Streamlit-Web-Application-for-Telegram-Chatbot-with-Chatbase-custom-GPT-LLM-model-API](https://github.com/WindJammer6/22.-Deployed-Streamlit-Web-Application-for-Telegram-Chatbot-with-Chatbase-custom-GPT-LLM-model-API) 
+
+This Github repository is hosting the code for the Telegram Chatbot integrated with Chatbase custom GPT LLM model API and Firebase (API)'s Realtime Database.
 
 <br>
 
@@ -68,8 +69,18 @@ Here is a directory to explain the purpose of each file in this repository:
     4. 'Image of PetaniAI logo.jpg', 'Image of PetaniAI user logo.jpg' and 'Image of local hydroponic farm site analysis.jpg' files
     5. 'main.py' file
     6. 'requirements.txt' file
+  
+2. [Files that are required in the creation of the Streamlit Web Application Project - TaniBoss!](#filesrequiredincreationofstreamlitwebapplications)
+    1. '.streamlit' folder  
+       i. 'config.toml' file
+    2. 'README.md' file
+    3. 'Crop yield dataset.csv' file
+    4. 'Image of PetaniAI logo.jpg', 'Image of PetaniAI user logo.jpg' and 'Image of local hydroponic farm site analysis.jpg' files
+    5. 'main.py' file
+    6. 'requirements.txt' file
     
-2. [Deployment Process of the Streamlit Web Application Project - TaniBoss! on Streamlit Cloud](#deploymentofstreamlitwebapplications)
+3. [Deployment Process of the Streamlit Web Application Project - TaniBoss! on Streamlit Cloud](#deploymentofstreamlitwebapplications)
+   1. secrets
 
 <br>
 
