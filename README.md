@@ -41,7 +41,7 @@ client = Mistral(api_key=api_key)
     )
 ```
 
-The custom 'snowflake_cortex_search' Python function can be found in the '[snowflake_cortex_search.py](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/telegram%20bot%20codes/snowflake_cortex_search.py)' file in the '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)' folder.
+The custom 'snowflake_cortex_search' Python function is defined in the '[snowflake_cortex_search.py](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/telegram%20bot%20codes/snowflake_cortex_search.py)' file in the '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)' folder.
 
 <br>
 
