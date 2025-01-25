@@ -7,7 +7,7 @@ The challenge of this hackathon was to create an innovative Retrieval-Augmented 
 
 <br>
 
-Devpost link to the project 'CodeBuddy' in the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/): https://devpost.com/software/codebuddy-bot?ref_content=my-projects-tab&ref_feature=my_projects
+- Devpost link to the project 'CodeBuddy' in the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/): https://devpost.com/software/codebuddy-bot?ref_content=my-projects-tab&ref_feature=my_projects
 
 <br>
 
