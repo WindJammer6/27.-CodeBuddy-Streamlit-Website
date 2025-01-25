@@ -9,6 +9,7 @@ import datetime
 from html import escape
 from mistralai import Mistral
 
+from snowflake_cortex_search import snowflake_cortex_search
 from autograder import AutoGrader
 
 # Initiating Mistral LLM stuffs
@@ -289,16 +290,20 @@ def handle_ask_code_submission_messages_python_function(update, context):
 # Displaying response #
 #######################
 def telegram_chatbot_response_to_code_submission_python_function(update, context):
-
+    
     ################################
-    # Generate Chatbase's response #
+    # Generate MistralAI's response #
     ################################
     conversation_history_and_other_data = client.chat.complete(
         model= model,
         messages = [
             {
                 "role": "user",
-                "content": f"{update.message.text}",
+                "content": f"""
+                Assignment name: {CONVERSATION_INFORMATION['assignment']}
+                Please provide me feedback of my submitted code according to the assignment notes without giving me the exact answer: {snowflake_cortex_search(CONVERSATION['assignment'])}
+                Submitted code: {update.message.text}
+                """,
             },
         ]
     )
