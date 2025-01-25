@@ -1,10 +1,4 @@
 # 27.-CodeBuddy-Streamlit-Website
-<p align="center"> 
-  <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/Image%20of%20TaniBoss!.png"  width="550" height="250">
-  <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/SUTD%20FACT%20Trip%20at%20PCU%20Hackathon%20Certificate%20of%20Top%20Winning%20Team.jpg"  width="350" height="250">
-  <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/SUTD%20FACT%20Trip%20at%20PCU%20Hackathon%20Certificate%20of%20Participation.jpg"  width="350" height="250">
-</p>
-
 This is my submission for the [Devpost](https://devpost.com/) hackathon titled: '[RAG 'n' ROLL Amp up Search with Snowflake & Mistral](https://snowflake-mistral-rag.devpost.com/)' lasting from 13-Nov-2024 to 21-Jan-2025.
 
 From the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral official website](https://snowflake-mistral-rag.devpost.com/): 'This hackathon is an opportunity to riff with cutting-edge AI technology. Join us and get comfortable with a setlist for learning AI with Cortex Search for retrieval, Mistral LLM (mistral-large2) on Snowflake Cortex for generation, and Streamlit Community Cloud for the front end.'
