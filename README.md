@@ -11,6 +11,28 @@ The challenge of this hackathon was to create an innovative Retrieval-Augmented 
 
 <br>
 
+## Integration of Retrieval-Augmented Generation (RAG) using Snowflake Cortex Search and MistralAI LLM
+This is the main code that integrates RAG using Snowflake Cortex Search and MistralAI LLM in the '[telegram_bot.py](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/telegram%20bot%20codes/telegram_bot.py)' file in the '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)' folder.
+```python
+    conversation_history_and_other_data = client.chat.complete(
+        model= model,
+        messages = [
+            {
+                "role": "user",
+                "content": f"""
+                Assignment name: {CONVERSATION_INFORMATION['assignment']}
+                Please provide me feedback of my submitted code according to the assignment notes without giving me the exact answer: {snowflake_cortex_search(CONVERSATION['assignment'])}
+                Submitted code: {update.message.text}
+                """,
+            },
+        ]
+    )
+```
+
+The custom 'snowflake_cortex_search' Python function can be found in the '[snowflake_cortex_search.py](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/telegram%20bot%20codes/snowflake_cortex_search.py)' file in the '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)' folder.
+
+<br>
+
 ## From the 'About Project' section in the Devpost project submission of CodeBuddy:  
 ### Inspiration
 Starting out into the programming world can be tricky for new programmers, even with the help of teachers in schools due to the lack of immediate feedback whenever they run into trouble during coding.
