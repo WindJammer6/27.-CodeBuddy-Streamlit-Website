@@ -1,7 +1,7 @@
 # 27.-CodeBuddy-Streamlit-Website
 <p align="center"> 
   <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/CodeBuddy_v3.jpg"  width="750" height="250">
-  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20013805.png"  width=600" height="250">
+  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20013805.png"  width=650" height="250">
   <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20014313.png"  width="450" height="250">
 </p>
 
