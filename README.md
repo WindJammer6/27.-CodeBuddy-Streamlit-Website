@@ -1,8 +1,8 @@
 # 27.-CodeBuddy-Streamlit-Website
 <p align="center"> 
-  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/CodeBuddy_v3.jpg"  width="550" height="250">
-  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20013805.png"  width="350" height="250">
-  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20014313.png"  width="350" height="250">
+  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/CodeBuddy_v3.jpg"  width="750" height="250">
+  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20013805.png"  width="550" height="250">
+  <img src="https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/Images%20for%20README/Screenshot%202025-01-22%20014313.png"  width="550" height="250">
 </p>
 
 This Github repository is my official submission for the [Devpost](https://devpost.com/) hackathon titled: '[RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/)'. However, since my submission requires the deployment of 2 different applications, a Streamlit website (deployed using Streamlit Cloud) and a Telegram Bot (deployed using Vercel), I had to use 2 seperate Github repositories. Since according to the rules of the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/), it requires the submission of a Streamlit website link and the Github repository hosting that Streamlit website, I decided to submit this Github repository as my official submission instead, while adding the main codes for the Telegram Bot in the folder '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)'. You can see the Github repository hosting the Telegram Bot [here](https://github.com/WindJammer6/26.-CodeBuddy).
