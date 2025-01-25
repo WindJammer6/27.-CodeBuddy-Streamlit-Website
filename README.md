@@ -5,6 +5,8 @@ From the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral official website](
 
 The challenge of this hackathon was to create an innovative Retrieval-Augmented Generation (RAG) applications that can revolutionize how we interact with information using [Snowflake's Cortex Search](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview) for retrieval, [Mistral LLM (mistral-large2)](https://mistral.ai/news/mistral-large-2407/) on [Snowflake's Cortex Search](https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-search/cortex-search-overview) for generation and [Streamlit Community Cloud](https://streamlit.io/cloud) for front end.
 
+<br>
+
 Devpost link to the project 'CodeBuddy' in the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/): https://devpost.com/software/codebuddy-bot?ref_content=my-projects-tab&ref_feature=my_projects
 
 <br>
