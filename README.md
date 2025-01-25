@@ -1,4 +1,10 @@
 # 27.-CodeBuddy-Streamlit-Website
+<p align="center"> 
+  <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/Image%20of%20TaniBoss!.png"  width="550" height="250">
+  <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/SUTD%20FACT%20Trip%20at%20PCU%20Hackathon%20Certificate%20of%20Top%20Winning%20Team.jpg"  width="350" height="250">
+  <img src="https://github.com/WindJammer6/28.-TaniBoss/blob/main/SUTD%20FACT%20Trip%20at%20PCU%20Hackathon%20Certificate%20of%20Participation.jpg"  width="350" height="250">
+</p>
+
 This Github repository is my official submission for the [Devpost](https://devpost.com/) hackathon titled: '[RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/)'. However, since my submission requires the deployment of 2 different applications, a Streamlit website (deployed using Streamlit Cloud) and a Telegram Bot (deployed using Vercel), I had to use 2 seperate Github repositories. Since according to the rules of the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon](https://snowflake-mistral-rag.devpost.com/), it requires the submission of a Streamlit website link and the Github repository hosting that Streamlit website, I decided to submit this Github repository as my official submission instead, while adding the main codes for the Telegram Bot in the folder '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)'. You can see the Github repository hosting the Telegram Bot [here](https://github.com/WindJammer6/26.-CodeBuddy).
 
 From the [RAG 'n' ROLL Amp up Search with Snowflake & Mistral official website](https://snowflake-mistral-rag.devpost.com/): 'This hackathon is an opportunity to riff with cutting-edge AI technology. Join us and get comfortable with a setlist for learning AI with Cortex Search for retrieval, Mistral LLM (mistral-large2) on Snowflake Cortex for generation, and Streamlit Community Cloud for the front end.'
