@@ -1,6 +1,11 @@
 
 from snowflake.core import Root
 from snowflake.snowpark import Session
+from snowflake.snowpark.functions import col
+from snowflake.core import Root, CreateMode
+from snowflake.core.database import Database
+from snowflake.core.schema import Schema
+from snowflake.core.table import Table, TableColumn, PrimaryKey
 
 CONNECTION_PARAMETERS = {
     "account": "PCQBTTO-VK19305",
@@ -8,14 +13,6 @@ CONNECTION_PARAMETERS = {
     "password": "M1stral!h4ck!",
     "role": "ACCOUNTADMIN",
 }   
-
-from snowflake.snowpark import Session
-from snowflake.snowpark.functions import col
-from snowflake.core import Root, CreateMode
-from snowflake.core.database import Database
-from snowflake.core.schema import Schema
-from snowflake.core.table import Table, TableColumn, PrimaryKey
-
 
 connection_params = {
     "connection_name": "default"
