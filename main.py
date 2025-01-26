@@ -100,8 +100,8 @@ cols = st.columns(2)
 def student_chatbot_conversation(index):
     st.header(f"👨‍🎓 Student ID: {database_data_conversations[index]['student_id']}")
     st.caption(f"{database_data_conversations[index]['assignment']} | {database_data_conversations[index]['date_and_time_of_submission']}")
-    student_code_tab, chatbot_response_tab, autograding_score_tab, assignment_question_notes_tab = \
-        st.tabs(["Student's Code", "Codebuddy's Response", "Score", "Question Notes"])
+    student_code_tab, chatbot_response_tab, autograding_score_tab, assignment_question_tab, assignment_notes_tab = \
+        st.tabs(["Student's Code", "Codebuddy's Response", "Score", "Question", "Notes"])
     
     with student_code_tab:
         st.code(database_data_conversations[index]['code_submitted'], language="python")
@@ -113,7 +113,16 @@ def student_chatbot_conversation(index):
         st.markdown(f"""🎯 Autograded score:  
                     {database_data_conversations[index]['scores']}""")
 
-    with assignment_question_notes_tab:
+    with assignment_question_tab:
+        # To extract the assignment link for the extracted assignment name in the 'list_of_assignments' list
+        extracted_assignment_question = None
+
+        for assignment in database_data_assignments:
+            if assignment['assignment_name'] == database_data_conversations[index]['assignment']:
+                extracted_assignment_question = assignment['assignment_question']
+        st.markdown(f"📖 Notes for the *{database_data_conversations[index]['assignment']}* assignment:\n\n{extracted_assignment_question}")
+
+    with assignment_notes_tab:
         # To extract the assignment link for the extracted assignment name in the 'list_of_assignments' list
         extracted_assignment_notes = None
 
@@ -306,6 +315,7 @@ with add_remove_assignments:
         )
         st.caption("Just click the 'Add Assignment' button once! Then click the 'Refresh' button for the added assignment to show up!")
         assignment_name = st.text_input("Name of Assignment:")
+        assignment_question = st.text_area("Assignment Notes:")
         assignment_notes = st.text_area("Assignment Notes:")
 
         # Initialize session state for managing test cases
@@ -349,7 +359,7 @@ with add_remove_assignments:
 
             #If confirmation add assignment button is pressed in the Streamlit (Python) web application, the program will 'push' 
             #basically add this new pieces of user data into the Realtime database in Firebase  
-            reference_to_database_assignments.push({"assignment_name" : assignment_name, "assignment_notes" : assignment_notes, 'test_cases' : (st.session_state.saved_test_cases)})    
+            reference_to_database_assignments.push({"assignment_name" : assigment_question, "assignment_question" : assigment_question, "assignment_notes" : assignment_notes, 'test_cases' : (st.session_state.saved_test_cases)})    
             st.success("Assignment added!")
     
     with st.popover("➖Remove Assignment"):
