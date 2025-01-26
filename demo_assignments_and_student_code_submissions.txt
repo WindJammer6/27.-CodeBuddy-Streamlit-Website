@@ -3,7 +3,13 @@
 ###################################
 Assignment 1: "Calculate Factorial"
 - Assignment Name: Calculate Factorial
-- School Notes: Write a function `factorial(n)` that calculates the factorial of a non-negative integer `n`. The factorial of `n` is defined as `n! = n × (n-1) × ... × 1` with `0! = 1`.
+- Assignment Question: Write a function `factorial(n)` that calculates the factorial of a non-negative integer `n`. The factorial of `n` is defined as `n! = n × (n-1) × ... × 1` with `0! = 1`.
+- Assignment Notes:
+  a. A factorial is the product of all positive integers up to a given number 𝑛. For example, 5!=5×4×3×2×1=120.
+  b. Factorials are commonly used in mathematical problems such as permutations, combinations, and probability calculations.
+  c. Consider edge cases like 0!=1 (a special case) and 1!=1.
+  d. Use a loop to iteratively multiply numbers or try recursion for advanced learning, but remember to test for large values to avoid performance issues.
+  e. This assignment focuses on understanding loops, conditionals, and basic arithmetic operations in Python.
 - Test Cases:
   1. Input: `0`, Expected Output: `1`
   2. Input: `1`, Expected Output: `1`
@@ -28,10 +34,10 @@ Assignment 1: "Calculate Factorial"
 2. Student ID: `67890`  
    Code:
    ```python
-   def factorial(n):
-       if n == 0:
-           return 1
-       return n * n  # Incorrect logic
+    def factorial(n):
+        if n == 0:
+            return 1
+        return n * n  # Incorrect logic
    ```
    Outcome: Fails test cases 3, 4, and 5.
 
@@ -41,7 +47,13 @@ Assignment 1: "Calculate Factorial"
 
 Assignment 2: "Check Prime Number"
 - Assignment Name: Check Prime Number
-- School Notes: Write a function `is_prime(n)` that returns `True` if `n` is a prime number and `False` otherwise. A prime number is greater than 1 and divisible only by 1 and itself.
+- Assignment Question: Write a function `is_prime(n)` that returns `True` if `n` is a prime number and `False` otherwise. A prime number is greater than 1 and divisible only by 1 and itself.
+- Assignment Notes:
+  a. A prime number is greater than 1 and divisible only by 1 and itself. For example, 2,3,5,7, and 13 are prime numbers.
+  b. Numbers less than or equal to 1 (e.g., 0 or −1) are not prime.
+  c. The most efficient way to check for primes is to loop only up to the square root of the number instead of all the way up to 𝑛−1.
+  d. Emphasize the importance of testing edge cases like 2, the smallest prime number, and large values to understand the program's performance.
+  e. This assignment reinforces the concepts of loops, conditionals, and modulus operations while introducing optimization techniques.
 - Test Cases:
   1. Input: `2`, Expected Output: `True`
   2. Input: `10`, Expected Output: `False`
@@ -82,7 +94,13 @@ Assignment 2: "Check Prime Number"
 
 Assignment 3: "Sum of Digits"
 - Assignment Name: Sum of Digits
-- School Notes: Write a function `sum_of_digits(n)` that calculates the sum of the digits of a non-negative integer `n`.
+- Assignment Question: Write a function `sum_of_digits(n)` that calculates the sum of the digits of a non-negative integer `n`.
+- Assignment Notes:
+  a. The goal is to calculate the sum of all digits in a non-negative integer. For example, the digits of 123 are 1,2, and 3, so the sum is 6.
+  b. This problem can be solved using loops or by converting the number to a string for a simpler approach.
+  c. Consider edge cases like 0, where the sum of digits is 0, and numbers with multiple zeros (e.g., 1002).
+  d. Focus on breaking the problem into smaller steps: extracting digits, summing them, and returning the result.
+  e. This assignment strengthens understanding of loops, type conversions, and modular arithmetic.
 - Test Cases:
   1. Input: `123`, Expected Output: `6`
   2. Input: `0`, Expected Output: `0`
