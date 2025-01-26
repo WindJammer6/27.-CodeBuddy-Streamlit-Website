@@ -315,7 +315,7 @@ with add_remove_assignments:
         )
         st.caption("Just click the 'Add Assignment' button once! Then click the 'Refresh' button for the added assignment to show up!")
         assignment_name = st.text_input("Name of Assignment:")
-        assignment_question = st.text_area("Assignment Notes:", key=10)
+        assignment_question = st.text_area("Assignment Question:", key=10)
         assignment_notes = st.text_area("Assignment Notes:", key=11)
 
         # Initialize session state for managing test cases
