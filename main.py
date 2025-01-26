@@ -359,7 +359,7 @@ with add_remove_assignments:
 
             #If confirmation add assignment button is pressed in the Streamlit (Python) web application, the program will 'push' 
             #basically add this new pieces of user data into the Realtime database in Firebase  
-            reference_to_database_assignments.push({"assignment_name" : assignment_name, "assignment_question" : assigment_question, "assignment_notes" : assignment_notes, 'test_cases' : (st.session_state.saved_test_cases)})    
+            reference_to_database_assignments.push({"assignment_name" : assignment_name, "assignment_question" : assignment_question, "assignment_notes" : assignment_notes, 'test_cases' : (st.session_state.saved_test_cases)})    
             st.success("Assignment added!")
     
     with st.popover("➖Remove Assignment"):
