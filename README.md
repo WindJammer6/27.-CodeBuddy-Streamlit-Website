@@ -19,6 +19,11 @@ The challenge of this hackathon was to create an innovative Retrieval-Augmented 
 
 <br>
 
+## (For the Judges) how to test out CodeBuddy?
+
+
+<br>
+
 ## Integration of Retrieval-Augmented Generation (RAG) using Snowflake Cortex Search and MistralAI LLM
 This is the main code that integrates RAG using Snowflake Cortex Search and MistralAI LLM in the '[telegram_bot.py](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/blob/main/telegram%20bot%20codes/telegram_bot.py)' file in the '[telegram bot codes](https://github.com/WindJammer6/27.-CodeBuddy-Streamlit-Website/tree/main/telegram%20bot%20codes)' folder.
 ```python
