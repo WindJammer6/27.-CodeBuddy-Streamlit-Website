@@ -19,7 +19,7 @@ The challenge of this hackathon was to create an innovative Retrieval-Augmented 
 
 <br>
 
-## (For the Judges) how to test out CodeBuddy?
+## (For the Judges of the RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon) How to test out CodeBuddy?
 
 
 <br>
