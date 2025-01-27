@@ -34,8 +34,8 @@ client = Mistral(api_key=api_key)
             {
                 "role": "user",
                 "content": f"""
-                Assignment name: {CONVERSATION_INFORMATION['assignment']}
-                Please provide me feedback of my submitted code and teach me what my errors are and how I can improve on them according to the assignment notes without giving the exact answer: {snowflake_cortex_search(CONVERSATION_INFORMATION['assignment'])}
+                Assignment name: {CONVERSATION_INFORMATION['assignment_name']}
+                Please provide me feedback of my submitted code and teach me what my errors are and how I can improve on them according to the assignment notes without giving the exact answer: {snowflake_cortex_search(CONVERSATION_INFORMATION['assignment_notes'])}
                 Submitted code: {update.message.text}
                 """,
             },
