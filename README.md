@@ -22,6 +22,11 @@ The challenge of this hackathon was to create an innovative Retrieval-Augmented 
 ## (For the judges of the RAG 'n' ROLL Amp up Search with Snowflake & Mistral Hackathon) How to test out CodeBuddy?
 See this [introduction video](https://youtu.be/59XQOQ5ekGM?si=zmVKZrXZheFhhBZc) to CodeBuddy and how to use CodeBuddy!
 
+
+https://github.com/user-attachments/assets/ed3c19b3-0c04-427a-b9c1-0b1183ea44c2
+
+
+
 <br>
 
 ## Integration of Retrieval-Augmented Generation (RAG) using Snowflake Cortex Search and MistralAI LLM
